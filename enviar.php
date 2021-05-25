@@ -1,22 +1,14 @@
 <?php
-$nombre = $_POST['nombre'];
-$mail = $_POST['email'];
-$mensaje = $_POST['mensaje'];
+    $destinatario = 'and1208es@gmail.com';
+    //este es al correo que llegara el mensaje
+    $nombre = $_POST['nombre'];
+    $mail = $_POST['email'];
+    $mensaje = $_POST['mensaje'];
 
-$header = 'From: ' . $mail . " \r\n";
-$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
-$header .= "Mime-Version: 1.0 \r\n";
-$header .= "Content-Type: text/plain";
+    $header = "Enviado desde la pagina RURUY" ;
+    $mensajeCompleto = $mensaje . "\nAtentamente: " . $nombre
 
-$mensaje = "Este mensaje fue enviado por " . $nombre . ",\r\n";
-$mensaje .= "Su e-mail es: " . $mail . " \r\n";
-$mensaje .= "Mensaje: " . $_POST['mensaje'] . " \r\n";
-$mensaje .= "Enviado el " . date('d/m/Y', time());
-
-$para = 'and1208es@gmail.com';
-$asunto = 'Mensaje de mi sitio web';
-
-mail($para, $asunto, utf8_decode($mensaje), $header);
-
-header("Location:index.html");
+    mail($destinatario, $mensajeCompleto, $header);
+    echo "<script>alert('corre enviado exitosamente'</script>";
+    echo "<script> setTimeout(\"location.href='index.html'\",1000)</script>";
 ?>
