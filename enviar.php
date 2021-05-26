@@ -6,7 +6,7 @@
     $mensaje = $_POST['mensaje'];
 
     $header = "Enviado desde la pagina RURUY" ;
-    $mensajeCompleto = $mensaje . "\nAtentamente: " . $nombre
+    $mensajeCompleto = $mensaje . "\nAtentamente: " . $nombre;
 
     mail($destinatario, $mensajeCompleto, $header);
     echo "<script>alert('corre enviado exitosamente'</script>";
